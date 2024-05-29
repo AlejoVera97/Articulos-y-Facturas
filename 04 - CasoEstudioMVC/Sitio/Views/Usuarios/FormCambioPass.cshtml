@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "FormCambioPass";
+}
+
+<h2> Cambio Password </h2>
+
+@Html.ActionLink("Volver", "Principal", "Home")
+
+@ViewBag.Mensaje
+
+
+
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Actual:  @Html.Password("PassActual", "")</td>
+        </tr>
+        <tr>
+            <td>Nueva:   @Html.Password("PassNueva", "")</td>
+        </tr>
+        <tr>
+            <td>confirmar:   @Html.Password("PassConfirmar", "")</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Aceptar" class="btn btn-default" /></td>
+        </tr>
+</table>
+}

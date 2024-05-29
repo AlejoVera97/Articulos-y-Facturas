@@ -1,0 +1,26 @@
+﻿
+<table>
+    <tr>
+        <td> Manejo Usuarios </td>
+        <td> @Html.ActionLink("Deslogueo", "Deslogueo", "Usuarios", new { area = "" }, new { @class = "navbar-brand" }) </td>
+        <td> @Html.ActionLink("Cambiar Password", "FormCambioPass", "Usuarios", new { area = "" }, new { @class = "navbar-brand" })</td>
+    </tr>
+    <tr>
+        <td> CRUD </td>
+        <td>@Html.ActionLink("Articulos", "FormArticulosListar", "Articulos", new { area = "" }, new { @class = "navbar-brand" })</td>
+        <td>@Html.ActionLink("Usuarios", "FormListousuarios", "Usuarios", new { area = "" }, new { @class = "navbar-brand" })</td>
+        
+    </tr>
+    <tr>
+        <td> Objetos Complejos </td>
+        <td> @Html.ActionLink("Factura (1 forma)", "FormFacturaAlta", "Facturas", new { area = "" }, new { @class = "navbar-brand" })</td>
+        <td> @Html.ActionLink("Factura (2 forma)", "ComienzoFactura", "Facturas2", new { area = "" }, new { @class = "navbar-brand" })</td>
+        
+    </tr>
+    <tr>
+        <td> Listados Parametrizados </td>
+        <td> @Html.ActionLink("Listar Facturas", "FormFacturasListar", "Facturas", new { area = "" }, new { @class = "navbar-brand" }) </td>
+        <td> </td>
+    </tr>
+</table>
+

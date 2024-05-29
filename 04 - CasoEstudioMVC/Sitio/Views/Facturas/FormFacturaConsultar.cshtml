@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Sitio.Models.LineasFacturas>
+
+@{
+    ViewBag.Title = "FormFacturaConsultar";
+}
+
+<h2>Lineas de la Factura</h2>
+
+@ViewBag.Mensaje
+
+
+@Html.ActionLink("Volver a listado", "FormFacturasListar")
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoArticulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Art.Precio)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Cant)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Art.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Art.Precio)
+        </td>
+      <td>
+            @Html.DisplayFor(modelItem => item.Cant)
+        </td>
+    </tr>
+}
+
+</table>

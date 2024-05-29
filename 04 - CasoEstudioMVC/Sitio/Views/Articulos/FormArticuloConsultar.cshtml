@@ -1,0 +1,44 @@
+﻿@model Sitio.Models.Articulo
+
+@{
+    ViewBag.Title = "FormArticuloConsultar";
+}
+
+<h2> Consultar un Articulo </h2>
+
+@ViewBag.Mensaje
+
+<div>
+
+    @Html.ActionLink("Volver a listado", "FormArticulosListar")
+
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+    </dl>
+
+</div>

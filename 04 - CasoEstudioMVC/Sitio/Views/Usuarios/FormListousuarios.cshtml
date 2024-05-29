@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Sitio.Models.Usuario>
+
+@{
+    ViewBag.Title = "FormListousuarios";
+}
+
+<h2>Mantenimiento Usuarios </h2>
+
+@ViewBag.Mensaje @**@
+
+
+
+<p>
+    @Html.ActionLink("Crear nuevo", "FormCrearUsuario")@*enrutamiento - mi controlador - MI VISTA*@
+    @Html.ActionLink("Volver", "Principal", "Home") @*esto es el menu principal del sistema - esta en otro controlador*@
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuLog)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (Sitio.Models.Usuario item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuLog) @* solo despliega un dato de cada objeto*@
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "FormUsuarioBorrar", new { item.UsuLog }) @*no tengo todas las opciones ABM pq no hay consulta, y modifico pass de forma indpendiente*@
+            </td>
+        </tr>
+    }
+
+
+</table>

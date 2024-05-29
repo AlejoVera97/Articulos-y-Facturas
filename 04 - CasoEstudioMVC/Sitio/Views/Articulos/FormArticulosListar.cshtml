@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Sitio.Models.Articulo>
+
+@{
+    ViewBag.Title = "FormArticulosListar";
+}
+
+<h2>Listado Articulos</h2>
+
+@ViewBag.Mensaje
+
+
+<p>
+    @Html.ActionLink("Nuevo ", "FormArticuloNuevo")
+    @Html.ActionLink(" Volver", "Principal", "Home")
+</p>
+ 
+@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div>
+                @Html.TextBox("DatoFiltro")
+                <input type="submit" value="Filtrar" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (Sitio.Models.Articulo unArt in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => unArt.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => unArt.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => unArt.Precio)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "FormArticuloModificar", new { unArt.Codigo }) @**@ 
+            @Html.ActionLink("Consultar", "FormArticuloConsultar", new { unArt.Codigo }) 
+            @Html.ActionLink("Borrar", "FormArticuloEliminar", new { unArt.Codigo })
+        </td>
+    </tr>
+}
+
+
+</table>

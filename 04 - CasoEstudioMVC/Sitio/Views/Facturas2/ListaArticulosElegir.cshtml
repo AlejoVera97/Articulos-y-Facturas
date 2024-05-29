@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Sitio.Models.Articulo>
+
+@{
+    ViewBag.Title = "ListaArticulosElegir";
+}
+
+<h2>Seleccionar Articulos Para Factura</h2>
+
+@ViewBag.Mensaje
+
+@Html.ActionLink("volver", "Principal", "Home")
+
+
+<p>
+    @Html.ActionLink("Finalizar Ingreso", "DatosFacturaIngresar", null, new { @class = "btn btn-default" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (Sitio.Models.Articulo item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.ActionLink("Agregar a Factura", "AgregarLinea", new { item.Codigo })
+            </td>
+        </tr>
+    }
+
+</table>
